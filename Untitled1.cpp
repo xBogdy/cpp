@@ -10,17 +10,23 @@ bool is_vow(char c)
 	// character 'c' 
 	return (c == 'a') || (c == 'e') || 
 		(c == 'i') || (c == 'o') || 
-		(c == 'u'); 
+		(c == 'u') || (c == 'A') || (c == 'E') || 
+		(c == 'I') || (c == 'O') || 
+		(c == 'U') ; 
 } 
 
 bool is_cons(char c) 
 { 
 	// this compares vowel with 
 	// character 'c' 
-	return (c == 'q') || (c == 'w') || //umple cu variantele celelalte posibile
-		(c == 'r') || (c == 't') || 
-		(c == 'y'); 
+	return (c == 'b') || (c == 'c') || 
+		(c == 'd') || (c == 'f') ||    
+		(c == 'h')|| (c == 'j') || 
+		(c == 'l') || (c == 'n') || 
+		(c == 'p') || (c == 'q') || //adauga celelalte consoane + toate consoanele cu majuscula
+		(c == 'r') || (c == 'B'); 
 }
+
 int findVowels(string str) 
 { 
 	int z=0,x=0,v=0;
@@ -51,6 +57,7 @@ int findVowels(string str)
 				}
 			}
 		}
+		
 		if ((!is_cons(str[i - 1])) || 
 			(!is_cons(str[i]))){
 			if(v==0){
@@ -73,17 +80,11 @@ return z;
 }
 
 int main () {
-
-//	char propozitia[] = "warijajofaufjaoiwdaowiwdaqryqry";
-	char propozitia[80];
-	cout << "Please enter a word: ";
+   
+	char propozitia[255];
+	cout << "Introduceti textul: ";
     cin >> propozitia;
-//    int i=1;
-//	do {
-//    	i++;
-//    c=getchar();
-//    putchar (c);
-//  } while (propozitia[i] != '.');
+    
 	
 	int z = findVowels(propozitia);	
 	cout<<"\nNumarul de silabe ="<<z<<endl;
@@ -92,4 +93,3 @@ int main () {
   return 0;
 
 }
-
